@@ -23,6 +23,7 @@ RUN apt-get -y update && \
         libmpfr-dev \
         libgmp-dev \
         libtool \
+        libz-dev \
         git && \
     rm -rf /var/lib/apt/lists/*
 
