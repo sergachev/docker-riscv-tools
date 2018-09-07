@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM debian:stretch as builder
 
 ENV RISCV_VERSION master
 
@@ -24,6 +24,7 @@ RUN apt-get -y update && \
         libgmp-dev \
         libtool \
         libz-dev \
+        libexpat1-dev \
         git && \
     rm -rf /var/lib/apt/lists/*
 
@@ -36,6 +37,9 @@ RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain 
     cd / && \
     rm -rf riscv-gnu-toolchain
 
-ENV PATH "/opt/riscv32i/bin:$PATH"
+FROM debian:stretch
 
+COPY --from=builder /opt/riscv32im /opt/riscv32im
+
+ENV PATH "/opt/riscv32i/bin:$PATH"
 VOLUME /opt/riscv32im
