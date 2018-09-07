@@ -5,7 +5,7 @@ ENV RISCV_VERSION master
 LABEL \
       com.github.lerwys.docker.dockerfile="Dockerfile" \
       com.github.lerwys.vcs-type="Git" \
-      com.github.lerwys.vcs-url="https://github.com/lerwys/docker-litex.git"
+      com.github.lerwys.vcs-url="https://github.com/lerwys/docker-riscv-tools.git"
 
 ARG DEBIAN_FRONTEND=noninteractive
 
