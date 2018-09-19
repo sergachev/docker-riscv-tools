@@ -1,4 +1,4 @@
-RISCV in a container
+RISCV toolchain in a container
 ===============================
 
 Overview
@@ -9,4 +9,4 @@ RISCV
 
 ## Build image
 
-    docker build -t lerwys/riscv .
+    docker build -t lerwys/riscv-tools .
