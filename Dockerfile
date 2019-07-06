@@ -34,7 +34,7 @@ WORKDIR /
 RUN git clone --recurse-submodules https://github.com/riscv/riscv-gnu-toolchain
 WORKDIR /riscv-gnu-toolchain
 RUN ./configure --prefix=/opt/riscv32im --with-arch=rv32im && \
-    make && \
+    make -j all && \
     make install
 
 FROM debian:stretch
